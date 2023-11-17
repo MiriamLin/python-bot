@@ -1,4 +1,3 @@
-# 檔名：word.py
 # 功能：對詞語輸出各種操作
 
 import discord
