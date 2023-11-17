@@ -1,4 +1,3 @@
-# 檔名：covid.py
 # 功能：印出疾管署提供台灣疫情的統計數字
 
 import discord
