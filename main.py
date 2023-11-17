@@ -1,6 +1,4 @@
-# 檔名：main.py
 # 功能：主程式、監聽訊息、鏈結加入其他功能
-# TODO：實作 unload, reload
 
 import discord
 from discord.ext import commands
