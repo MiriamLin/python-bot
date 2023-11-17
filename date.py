@@ -1,4 +1,3 @@
-# 檔名：date.py
 # 功能：顯示月曆上的各種資訊
 from asyncio import DefaultEventLoopPolicy
 import discord
