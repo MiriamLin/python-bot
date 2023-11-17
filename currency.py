@@ -1,4 +1,3 @@
-# 檔名：currency.py
 # 功能：從銀行(玉山銀行網頁)印出貨幣和匯率的相關資訊
 
 import discord
