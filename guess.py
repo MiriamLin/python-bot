@@ -1,3 +1,4 @@
+# 功能：猜數字遊戲
 import discord
 from discord.ext import commands
 import random
