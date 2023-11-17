@@ -1,5 +1,4 @@
-# 檔名：picture.py
-# 功能：上傳、發送照片（簡單示範和照片有關的用法）
+# 功能：上傳、發送照片
 
 import discord
 from discord.ext import commands
