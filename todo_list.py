@@ -1,7 +1,5 @@
 # 檔名：todo_list.py
 # 功能：TODO list (新增、刪除、顯示)
-# TODO：刪除、顯示、排序、清空、儲存記錄至檔案 
-
 import discord
 from discord.ext import commands
 import re
