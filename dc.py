@@ -1,4 +1,3 @@
-# 檔名：dc.py
 # 功能：顯示dcard、ptt等論壇熱門文章
 
 import discord
