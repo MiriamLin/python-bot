@@ -1,44 +1,45 @@
-# 功能：猜數字遊戲
+# Number-guessing game (https://en.wikipedia.org/wiki/Bulls_and_Cows)
 import discord
 from discord.ext import commands
 import random
-def calculate(l,vg):
-    a_count=0
-    b_count=0
+
+def calculate(l, vg):
+    a_count = 0
+    b_count = 0
     for i in range(len(l)):
-        if l[i]==vg[i]:
-            a_count+=1
+        if l[i] == vg[i]:
+            a_count += 1
         if vg[i] in l:
-            b_count+=1
-    b_count-=a_count
+            b_count += 1
+    b_count -= a_count
     return(a_count,b_count)
 
 class Guess(commands.Cog):
     def __init__(self, bot):
         self.bot = bot 
     
-    @commands.command(help = "啟動猜數字遊戲", brief = "Guess nAnB.")
+    @commands.command(help = "1A2B Game", brief = "Guess the number.")
     async def guessnumber(self, ctx):
         def is_valid(m):
-            return m.author==ctx.author
+            return m.author == ctx.author
         await ctx.send("Guess a 4-digits number that doesn't contain 0.")
-        ans=''.join(random.sample("123456789",4))
-        print("answer:",ans)
+        ans=''.join(random.sample("123456789", 4))
+        print("answer:", ans)
         for s in range(30):
             g=await self.bot.wait_for('message',check=is_valid,timeout=300.0)
             guess=g.content.strip()
             
-            if guess.lower()=="quit":
-                await ctx.send("已退出遊戲")
+            if guess.lower() == "quit":
+                await ctx.send("Bye")
                 return
 
-            elif guess.lower()!="quit" and (guess.isdigit()==False or len(str(guess))!=4 or '0' in str(guess)):
-                await ctx.send("輸入不合法，請重新輸入")
+            elif guess.lower() != "quit" and (guess.isdigit()==False or len(str(guess))!=4 or '0' in str(guess)):
+                await ctx.send("Unvalid input, please re-enter.")
                 continue
             else:
-                aa,bb=calculate(ans,guess)
-                if aa==4:
-                    await ctx.send("恭喜答對!")
+                aa, bb = calculate(ans,guess)
+                if aa == 4:
+                    await ctx.send("You win the game!")
                     return
                 else:
                     await ctx.send(f"{aa}A{bb}B")
