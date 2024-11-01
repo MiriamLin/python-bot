@@ -1,4 +1,5 @@
-## File Structure (Only the Python files have been uploaded to GitHub.)
+## File Structure 
+Note: Only Python files have been uploaded to GitHub.
 
 ### `src/` (Source Code)
 - `main.py`
